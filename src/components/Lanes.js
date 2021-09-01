@@ -1,6 +1,8 @@
-import { useState } from "react";
-import { Button } from "semantic-ui-react";
+// import { useState } from "react";
+// import { Button, Modal, Form } from "semantic-ui-react";
 import styled from "styled-components";
+import TicketModal from "./TicketModal";
+import Tickets from "./Tickets";
 
 const LaneStyle = styled.div`
   margin-top: 5px;
@@ -27,7 +29,7 @@ const LaneStyle = styled.div`
         display: flex;
         word-break: break-all;
     }
-    .new-card-button {
+    .new-ticket-button {
         width: 95%;
         padding: 10px 20px;
         margin: 5px;
@@ -39,24 +41,25 @@ const LaneStyle = styled.div`
     }
 `
 
-function Lanes() {
-    const [newCard, setNewCard] = useState(false)
-
+function Lanes({tasks, onAddTasks}) {
+    const taskInfo = tasks.map(task => <Tickets key={task.id} {...task} />)
 
     return (
         <LaneStyle >
             <div className='lanes'>
                 <div className='list'>
                     <div className='title'>To-Do</div>
-                    <Button className='new-card-button' >New Card</Button>  
+                    <TicketModal onAddTasks={onAddTasks} />
+                    {taskInfo}
                 </div>
                 <div className='list'>
                     <div className='title'>Working</div>
-                    <Button className='new-card-button'>New Card</Button>
+                    <TicketModal />
                 </div>
                 <div className='list'>
                     <div className='title'>Complete</div>
-                    <Button className='new-card-button'>New Card</Button>
+                    <TicketModal />
+                    {/* <Button className='new-ticket-button'>New Ticket</Button> */}
                 </div>
             </div>
         </LaneStyle>
@@ -64,8 +67,3 @@ function Lanes() {
 }
 
 export default Lanes;
-
-{/* <textarea placeholder='Name of Task'></textarea>
-                    <textarea placeholder='Description'></textarea>
-                    <Button className='new-card-button'>Add</Button>
-                    <Button className='cancel-button'>Cancel</Button> */}
