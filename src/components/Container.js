@@ -15,14 +15,14 @@ const ContainerStyle = styled.div`
     padding-bottom: 10px;
     }
 `
-function Container({tasks, onAddTasks}) {
+function Container({tasks, onAddTasks, onDeleteTask}) {
     return (
         <ContainerStyle className='main-container'>
             {/* <Button className='button'>
                 + Add New Lane
             </Button> */}
             <div className='second-container'>
-                <Lanes tasks={tasks} onAddTasks={onAddTasks} />
+                <Lanes tasks={tasks} onAddTasks={onAddTasks} onDeleteTask={onDeleteTask} />
             </div>
         </ContainerStyle>
     )

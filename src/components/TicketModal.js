@@ -18,12 +18,11 @@ function TicketModal({ onAddTasks }) {
         fetch('http://localhost:3000/tasks', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
         })
-            .then(resp => resp.json())
+            .then(res => res.json())
             .then(task => {
                 console.log(task)
                 onAddTasks(task)

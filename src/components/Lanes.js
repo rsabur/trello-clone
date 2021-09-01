@@ -4,7 +4,7 @@ import styled from "styled-components";
 import TicketModal from "./TicketModal";
 import Tickets from "./Tickets";
 
-const LaneStyle = styled.div`
+const LaneStyling = styled.div`
   margin-top: 5px;
   diplay: block;
   .lanes {
@@ -41,11 +41,11 @@ const LaneStyle = styled.div`
     }
 `
 
-function Lanes({tasks, onAddTasks}) {
-    const taskInfo = tasks.map(task => <Tickets key={task.id} {...task} />)
+function Lanes({tasks, onAddTasks, onDeleteTask}) {
+    const taskInfo = tasks.map(task => <Tickets key={task.id} {...task} onDeleteTask={onDeleteTask} />)
 
     return (
-        <LaneStyle >
+        <LaneStyling >
             <div className='lanes'>
                 <div className='list'>
                     <div className='title'>To-Do</div>
@@ -62,7 +62,7 @@ function Lanes({tasks, onAddTasks}) {
                     {/* <Button className='new-ticket-button'>New Ticket</Button> */}
                 </div>
             </div>
-        </LaneStyle>
+        </LaneStyling>
     )
 }
 

@@ -19,16 +19,20 @@ function App() {
     .then(tasksArr => setTasks(tasksArr))
   }, [])
 
-  const handleAddTasks = (newTicket) => {
-    const newTicketsArr = [newTicket, ...tasks]
-    setTasks(newTicketsArr)
+  const handleAddTask = (newTask) => {
+    const newTaskArr = [newTask, ...tasks]
+    setTasks(newTaskArr)
+  }
+  const handleDeleteTask = (taskId) => {
+    const minusTask = tasks.filter(task => task.id != taskId)
+    setTasks(minusTask)
   }
 
   return (
     <div className="App">
       <GlobalStyle />
       <Header />
-      <Container tasks={tasks} onAddTasks={handleAddTasks} />
+      <Container tasks={tasks} onAddTasks={handleAddTask} onDeleteTask={handleDeleteTask} />
     </div>
   );
 }
