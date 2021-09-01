@@ -19,6 +19,11 @@
       "id": 4,
       "name": "Daily Exercise",
       "description": "Remember to get out of the house to get some exercise like go for walks, yoga or ride bikes."
+    },
+    {
+      "name": "Take Trash",
+      "description": "Remove trash from bin, tie up and take to trash shoot. Replace bag in trash bin.",
+      "id": 5
     }
   ]
 }

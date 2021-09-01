@@ -1,8 +1,8 @@
 // import { useState } from "react";
 // import { Button, Modal, Form } from "semantic-ui-react";
 import styled from "styled-components";
-import TicketModal from "./TicketModal";
-import Tickets from "./Tickets";
+import TaskForm from "./TaskForm";
+import Tasks from "./Tasks";
 
 const LaneStyling = styled.div`
   margin-top: 5px;
@@ -42,23 +42,23 @@ const LaneStyling = styled.div`
 `
 
 function Lanes({tasks, onAddTasks, onDeleteTask}) {
-    const taskInfo = tasks.map(task => <Tickets key={task.id} {...task} onDeleteTask={onDeleteTask} />)
+    const taskInfo = tasks.map(task => <Tasks key={task.id} {...task} onDeleteTask={onDeleteTask} />)
 
     return (
         <LaneStyling >
             <div className='lanes'id='1'>
                 <div className='list'>
                     <div className='title'>To-Do</div>
-                    {/* <TicketModal onAddTasks={onAddTasks} /> */}
+                    {/* <TaskForm onAddTasks={onAddTasks} /> */}
                     {taskInfo}
                 </div>
                 <div className='list' id='2'>
                     <div className='title'>Working</div>
-                    {/* <TicketModal /> */}
+                    {/* <TaskForm /> */}
                 </div>
                 <div className='list' id='3'>
                     <div className='title'>Complete</div>
-                    {/* <TicketModal /> */}
+                    {/* <TaskForm /> */}
                     {/* <Button className='new-ticket-button'>New Ticket</Button> */}
                 </div>
             </div>

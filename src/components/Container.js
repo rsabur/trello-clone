@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Modal, Button } from "semantic-ui-react";
 import styled from "styled-components";
-import Lanes from "./Lanes";
-import TicketModal from "./TicketModal";
+import Lists from "./Lists";
+import TaskForm from "./TaskForm";
 
 const ContainerStyle = styled.div`
     max-width: 1200px;
@@ -43,14 +43,14 @@ function Container({ tasks, onAddTasks, onDeleteTask }) {
             >
                 <Modal.Header>Create a New Ticket!</Modal.Header>
                 <Modal.Description>
-                    <TicketModal onAddTasks={onAddTasks} />
+                    <TaskForm onAddTasks={onAddTasks} />
                 </Modal.Description>
                 <Button color='black' onClick={() => setOpen(false)}>
                     Cancel
                 </Button>
             </Modal>
             <div className='second-container'>
-                <Lanes tasks={tasks} onAddTasks={onAddTasks} onDeleteTask={onDeleteTask} />
+                <Lists tasks={tasks} onAddTasks={onAddTasks} onDeleteTask={onDeleteTask} />
             </div>
         </ContainerStyle>
     )

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Modal, Form } from "semantic-ui-react";
 
-function TicketModal({ onAddTasks }) {
+function TaskForm({ onAddTasks }) {
     const [newCard, setNewCard] = useState()
     const [open, setOpen] = useState(false)
     const [name, setName] = useState('')
@@ -61,4 +61,4 @@ function TicketModal({ onAddTasks }) {
     )
 }
 
-export default TicketModal;
+export default TaskForm;

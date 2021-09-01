@@ -1,7 +1,7 @@
 import { Button, Card } from "react-bootstrap";
 // import { Card } from "semantic-ui-react";
 
-function Tickets({ id, name, description, onDeleteTask }) {
+function Tasks({ id, name, description, onDeleteTask }) {
 
     const handleDelete = (id) => {
         console.log(id)
@@ -18,7 +18,7 @@ function Tickets({ id, name, description, onDeleteTask }) {
                     {name} 
                     <Button style={{marginLeft: '150px'}} onClick={() => handleDelete(id)}>🗑</Button>
                 </Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Description</Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted">Description: </Card.Subtitle>
                 <Card.Text>
                     {description}
                 </Card.Text>
@@ -55,4 +55,4 @@ function Tickets({ id, name, description, onDeleteTask }) {
     )
 }
 
-export default Tickets;
+export default Tasks;
