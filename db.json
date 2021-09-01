@@ -1,24 +1,24 @@
 {
-    "tasks": [
-        {
-            "id": 1,
-            "name": "Do Dishes",
-            "description": "Rinse dishes from the sink, place into then run dishwasher."
-        },
-        {
-            "id": 2,
-            "name": "Apply To Jobs",
-            "description": "Search job boards for jobs that closely align with interests and experience. Draft cover letter and resume then apply."
-        },
-        {
-            "id": 3,
-            "name": "Practice Algos",
-            "description": "Join the daily morning algo-club zoom study sessions for algo practice."
-        },
-        {
-            "id": 4,
-            "name": "Daily Exercise",
-            "description": "Remember to get out of the house to get some exercise like go for walks, yoga or ride bikes."
-        }
-    ]
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Do Dishes",
+      "description": "Rinse dishes from the sink, place into then run dishwasher."
+    },
+    {
+      "id": 2,
+      "name": "Apply To Jobs",
+      "description": "Search job boards for jobs that closely align with interests and experience. Draft cover letter and resume then apply."
+    },
+    {
+      "id": 3,
+      "name": "Practice Algos",
+      "description": "Join the daily morning algo-club zoom study sessions for algo practice."
+    },
+    {
+      "id": 4,
+      "name": "Daily Exercise",
+      "description": "Remember to get out of the house to get some exercise like go for walks, yoga or ride bikes."
+    }
+  ]
 }

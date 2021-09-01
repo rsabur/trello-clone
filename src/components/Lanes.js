@@ -13,7 +13,7 @@ const LaneStyling = styled.div`
       align-items: flex-start;
     }
     .list {
-        flex-basis: 24%;
+        flex-basis: 32%;
         background: rgba(97, 103, 133, 1);
         min-height: 80px;
         box-sizing: content-box;
@@ -46,19 +46,19 @@ function Lanes({tasks, onAddTasks, onDeleteTask}) {
 
     return (
         <LaneStyling >
-            <div className='lanes'>
+            <div className='lanes'id='1'>
                 <div className='list'>
                     <div className='title'>To-Do</div>
-                    <TicketModal onAddTasks={onAddTasks} />
+                    {/* <TicketModal onAddTasks={onAddTasks} /> */}
                     {taskInfo}
                 </div>
-                <div className='list'>
+                <div className='list' id='2'>
                     <div className='title'>Working</div>
-                    <TicketModal />
+                    {/* <TicketModal /> */}
                 </div>
-                <div className='list'>
+                <div className='list' id='3'>
                     <div className='title'>Complete</div>
-                    <TicketModal />
+                    {/* <TicketModal /> */}
                     {/* <Button className='new-ticket-button'>New Ticket</Button> */}
                 </div>
             </div>

@@ -5,7 +5,7 @@ function Tickets({ id, name, description, onDeleteTask }) {
 
     const handleDelete = (id) => {
         console.log(id)
-        // fetch(`http://localhost:3000/tasks${id}`, {
+        // fetch(`http://localhost:3000/tasks/${id}`, {
         //     method: 'DELETE'
         // })
         onDeleteTask(id)

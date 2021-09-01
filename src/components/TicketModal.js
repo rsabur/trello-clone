@@ -31,14 +31,7 @@ function TicketModal({ onAddTasks }) {
             })
     }
     return (
-        <Modal
-            onClose={() => setOpen(false)}
-            onOpen={() => setOpen(true)}
-            open={open}
-            trigger={<Button className='new-ticket-button' >New Ticket</Button>}
-        >
-            <Modal.Header>Create a New Ticket!</Modal.Header>
-            <Modal.Description>
+
                 <Form onSubmit={handleTicketSubmit}>
                     <Form.Group>
                         <Form.Input
@@ -57,12 +50,6 @@ function TicketModal({ onAddTasks }) {
                             onChange={(e) => setDescription(e.target.value)}>
                         </Form.TextArea>
                     </Form.Group>
-                </Form>
-            </Modal.Description>
-            <Modal.Actions>
-                <Button color='black' onClick={() => setOpen(false)}>
-                    Cancel
-                </Button>
                 <Button
                     content="Add"
                     labelPosition='right'
@@ -70,8 +57,7 @@ function TicketModal({ onAddTasks }) {
                     onClick={() => setOpen(false)}
                     positive
                 />
-            </Modal.Actions>
-        </Modal>
+                </Form>
     )
 }
 
