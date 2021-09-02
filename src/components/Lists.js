@@ -8,7 +8,7 @@ import Tasks from "./Tasks";
 
 function Lanes({ tasks, onAddTasks, onDeleteTask }) {
     const taskInfo = tasks.map(task => <Tasks key={task.id} {...task} onDeleteTask={onDeleteTask} />)
-
+    
     return (
 
         <>

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Modal, Button } from "semantic-ui-react";
+import { Modal } from "semantic-ui-react";
+import { Button } from "react-bootstrap"
 import styled from "styled-components";
 import Lists from "./Lists";
 import TaskForm from "./TaskForm";
@@ -72,42 +73,35 @@ function Container({ id, name, tasks }) {
         const newTaskArr = [newTask, ...task]
         setTasks(newTaskArr)
     }
+
     const handleDeleteTask = (taskId) => {
-        const minusTask = task.filter(task => task.id != taskId)
+        const minusTask = task.filter(task => task.id !== taskId)
         setTasks(minusTask)
     }
 
     return (
-        <ContainerStyle className='main-container'>
-            {/* <Button className='button'>
-                + Add New Lane
-            </Button> */}
-            <div className='second-container'>
-                <ListStyling >
-                    <div className='lanes'>
-                        <div className='list'>
-                            <div className='title'>To-Do</div>
-                            <Modal
-                                onClose={() => setOpen(false)}
-                                onOpen={() => setOpen(true)}
-                                open={open}
-                                trigger={<Button className='new-ticket-button'>New Task</Button>}
-                            >
-                                <Modal.Header>Create a New Ticket!</Modal.Header>
-                                <Modal.Description>
-                                    <TaskForm onAddTasks={handleAddTask} />
-                                </Modal.Description>
-                                <Button color='black' onClick={() => setOpen(false)}>
-                                    Cancel
-                                </Button>
-                            </Modal>
-                            <Lists tasks={tasks} onAddTasks={handleAddTask} onDeleteTask={handleDeleteTask} />
-                        </div>
 
-                    </div>
-                </ListStyling>
+        <ListStyling >
+            <div className='list'>
+                <div className='title'>{name}</div>
+                <Modal
+                    onClose={() => setOpen(false)}
+                    onOpen={() => setOpen(true)}
+                    open={open}
+                    trigger={<Button className='new-ticket-button'>New Task</Button>}
+                >
+                    <Modal.Header>Create a New Ticket!</Modal.Header>
+                    <Modal.Description>
+                        <TaskForm onAddTasks={handleAddTask} />
+                    </Modal.Description>
+                    <Button color='black' onClick={() => setOpen(false)}>
+                        Cancel
+                    </Button>
+                </Modal>
+                <Lists tasks={tasks} onAddTasks={handleAddTask} onDeleteTask={handleDeleteTask} />
             </div>
-        </ContainerStyle>
+        </ListStyling>
+
     )
 }
 
