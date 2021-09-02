@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap"
 import styled from "styled-components";
 import Lists from "./Lists";
 import TaskForm from "./TaskForm";
+import Tasks from "./Tasks";
 
 const ContainerStyle = styled.div`
     max-width: 1200px;
@@ -78,6 +79,8 @@ function Container({ id, name, tasks }) {
         const minusTask = task.filter(task => task.id !== taskId)
         setTasks(minusTask)
     }
+    
+    const taskInfo = task.map(task => <Tasks key={task.id} {...task} onDeleteTask={handleDeleteTask} />)
 
     return (
 
@@ -98,7 +101,8 @@ function Container({ id, name, tasks }) {
                         Cancel
                     </Button>
                 </Modal>
-                <Lists tasks={tasks} onAddTasks={handleAddTask} onDeleteTask={handleDeleteTask} />
+                {/* <Lists tasks={tasks} onAddTasks={handleAddTask} onDeleteTask={handleDeleteTask} /> */}
+                {taskInfo}
             </div>
         </ListStyling>
 
