@@ -22,6 +22,7 @@ function App() {
 
 
   const renderLists = lists.map(list => <Container key={list.id + list.name} {...list} />)
+  
   return (
     <div className="App">
       <GlobalStyle />
