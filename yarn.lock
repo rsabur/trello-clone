@@ -10371,6 +10371,13 @@
   dependencies:
     "randombytes" "^2.1.0"
 
+"serialize-javascript@^6.0.0":
+  "integrity" "sha512-Qr3TosvguFt8ePWqsvRfrKyQXIiW+nGbYpy8XK24NQHE83caxWt+mIymTT19DGFbNWNLfEwsrkSmN64lVWB9ag=="
+  "resolved" "https://registry.npmjs.org/serialize-javascript/-/serialize-javascript-6.0.0.tgz"
+  "version" "6.0.0"
+  dependencies:
+    "randombytes" "^2.1.0"
+
 "serve-index@^1.9.1":
   "integrity" "sha1-03aNabHn2C5c4FD/9bRTvqEqkjk="
   "resolved" "https://registry.npmjs.org/serve-index/-/serve-index-1.9.1.tgz"
