@@ -11,28 +11,22 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 function App() {
-  const [tasks, setTasks] = useState([])
+  const [lists, setLists] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/tasks')
+    fetch('http://localhost:3000/lists')
     .then(res => res.json())
-    .then(tasksArr => setTasks(tasksArr))
+    .then(listsArr => setLists(listsArr))
   }, [])
 
-  const handleAddTask = (newTask) => {
-    const newTaskArr = [newTask, ...tasks]
-    setTasks(newTaskArr)
-  }
-  const handleDeleteTask = (taskId) => {
-    const minusTask = tasks.filter(task => task.id != taskId)
-    setTasks(minusTask)
-  }
 
+
+  const renderLists = lists.map(list => <Container key={list.id + list.name} {...list} />)
   return (
     <div className="App">
       <GlobalStyle />
       <Header />
-      <Container tasks={tasks} onAddTasks={handleAddTask} onDeleteTask={handleDeleteTask} />
+      {renderLists}
     </div>
   );
 }

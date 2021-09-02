@@ -27,9 +27,19 @@ const ContainerStyle = styled.div`
         cursor: pointer;
     }
 `
-function Container({ tasks, onAddTasks, onDeleteTask }) {
+function Container({ id, name, tasks }) {
     const [open, setOpen] = useState(false)
+    const [setTasks] = useState([])
     
+    const handleAddTask = (newTask) => {
+        const newTaskArr = [newTask, ...tasks]
+        setTasks(newTaskArr)
+      }
+      const handleDeleteTask = (taskId) => {
+        const minusTask = tasks.filter(task => task.id != taskId)
+        setTasks(minusTask)
+      }
+
     return (
         <ContainerStyle className='main-container'>
             {/* <Button className='button'>
@@ -43,14 +53,14 @@ function Container({ tasks, onAddTasks, onDeleteTask }) {
             >
                 <Modal.Header>Create a New Ticket!</Modal.Header>
                 <Modal.Description>
-                    <TaskForm onAddTasks={onAddTasks} />
+                    <TaskForm onAddTasks={handleAddTask} />
                 </Modal.Description>
                 <Button color='black' onClick={() => setOpen(false)}>
                     Cancel
                 </Button>
             </Modal>
             <div className='second-container'>
-                <Lists tasks={tasks} onAddTasks={onAddTasks} onDeleteTask={onDeleteTask} />
+                <Lists tasks={tasks} onAddTasks={handleAddTask} onDeleteTask={handleDeleteTask} />
             </div>
         </ContainerStyle>
     )
